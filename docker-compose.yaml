@@ -1,0 +1,41 @@
+services:
+    # nginx
+    web:
+        build:
+            dockerfile: ./nginx/Dockerfile
+        ports:
+            - "80:80"
+    
+    # php
+    app:
+        build:
+            dockerfile: ./php/Dockerfile
+        environment:
+            MYSQL_HOST: db
+            MYSQL_PORT: ${MYSQL_PORT}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+            REDIS_HOST: cache
+            REDIS_PORT: ${REDIS_PORT}
+    
+    # mysql
+    db:
+        image: mysql:8.0
+        ports:
+            - "3306:3306"
+        volumes:
+            - mysqldata:/var/lib/mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+
+    # redis
+    cache:
+        image: redis:latest
+
+volumes:
+    mysqldata:
