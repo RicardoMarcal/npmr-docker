@@ -1,11 +1,9 @@
 # N.P.M.R Docker
 
-> N.P.M.R. é uma sigla para Nginx, PHP, MySQL e Redis. Este repositório
+> N.P.M.R. é uma sigla para Nginx, PHP, MySQL e Redis. Este repositório é apenas um modelo, não um projeto funcional.
 
 ## 💻 Pré-requisitos
-
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
-
 * Este projeto foi clonado em sua máquina;
 * Em seu terminal você está na pasta raiz dest projeto;
 * Você possui o `Docker` instalado em sua máquina;
@@ -23,7 +21,7 @@ docker compose up --build -d
 ```
 
 ## 💻 Instalando as dependências de desenvolvimento do PHP
-> OBS: você deve estar com o projeto rodando em modo de desenvolvimento.
+OBS: você deve estar com o projeto rodando em modo de desenvolvimento.
 ```
 docker exec -it npmr-docker-app-1 sh
 ```
