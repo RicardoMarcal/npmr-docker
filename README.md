@@ -20,7 +20,7 @@ Produção:
 docker compose up --build -d
 ```
 
-## 💻 Instalando as dependências de desenvolvimento do PHP
+## ⚙️ Instalando as dependências de desenvolvimento do PHP
 OBS: você deve estar com o projeto rodando em modo de desenvolvimento.
 ```
 docker exec -it npmr-docker-app-1 sh
